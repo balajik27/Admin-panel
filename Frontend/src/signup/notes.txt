@@ -1,0 +1,190 @@
+
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+
+// import './style.css'
+export default function SignUp(){
+    return(
+        <>
+        <style>
+                        {`
+                         .wave-group {
+                            position: relative;
+                          }
+                          
+                          .wave-group .input {
+                            font-size: 16px;
+                            padding: 10px 10px 10px 5px;
+                            display: block;
+
+                            border: none;
+                            border-bottom: 1px solid #515151;
+                            background: transparent;
+                          }
+                          .userName{
+                            width: 100%;
+                          }
+                          .email{
+                            width: 100%;
+                          }
+                          .passwordInput{
+                            width: 300px;
+                          }
+                          .wave-group .input:focus {
+                            outline: none;
+                          }
+                          
+                          .wave-group .label {
+                            color: #999;
+                            font-size: 18px;
+                            font-weight: normal;
+                            position: absolute;
+                            pointer-events: none;
+                            left: 5px;
+                            top: 10px;
+                            display: flex;
+                          }
+                          
+                          .wave-group .label-char {
+                            transition: 0.2s ease all;
+                            transition-delay: calc(var(--index) * .05s);
+                          }
+                          
+                          .wave-group .input:focus ~ label .label-char,
+                          .wave-group .input:valid ~ label .label-char {
+                            transform: translateY(-20px);
+                            font-size: 14px;
+                            color: #5264AE;
+                          }
+                          
+                          .wave-group .bar {
+                            position: relative;
+                            display: block;
+                            
+                          }
+                          .nameBar{
+                            width: 250px;
+                          }
+                          .emailBar{
+                            width: 250px;
+                          }
+                          .passwordBar{
+                            width: 300px;
+                          }
+                          
+                          .wave-group .bar:before,.wave-group .bar:after {
+                            content: '';
+                            height: 2px;
+                            width: 0;
+                            bottom: 1px;
+                            position: absolute;
+                            background: #5264AE;
+                            transition: 0.2s ease all;
+                            -moz-transition: 0.2s ease all;
+                            -webkit-transition: 0.2s ease all;
+                          }
+                          
+                          .wave-group .bar:before {
+                            left: 50%;
+                          }
+                          
+                          .wave-group .bar:after {
+                            right: 50%;
+                          }
+                          
+                          .wave-group .input:focus ~ .bar:before,
+                          .wave-group .input:focus ~ .bar:after {
+                            width: 50%;
+                          }
+                        `
+                        }
+       
+                    </style>
+        <div className="signup_container">
+        <Container className="signUpContainerCenter" >
+            <Row>
+                <Col xs lg="2"></Col>
+                <Col lg="8" md="auto" className="h-100 d-flex justify-content-center align-items-center">
+                    <div className="signUpForm">
+                      <h2 className="text-center">Sign Up</h2>
+                    
+                    <Row className="mb-4 mt-5">
+                        <Col lg="5" className="d-flex justify-content-center">
+                        <div className="wave-group">
+                              <input required="" type="text" className="input userName" />
+                              <span className="bar nameBar"></span>
+                              <label className="label">
+                              <span className="label-char" style={{ '--index': 0 }}>N</span>
+                              <span className="label-char" style={{ '--index': 1 }}>a</span>
+                              <span className="label-char" style={{ '--index': 2 }}>m</span>
+                              <span className="label-char" style={{ '--index': 3 }}>e</span>
+                              </label>
+                          </div>
+                        </Col>
+                        <Col lg="7" className="d-flex justify-content-center">
+                        <div className="wave-group">
+                              <input required="" type="text" className="input email" />
+                              <span className="bar emailBar"></span>
+                              <label className="label">
+                              <span className="label-char" style={{ '--index': 0 }}>E</span>
+                              <span className="label-char" style={{ '--index': 1 }}>m</span>
+                              <span className="label-char" style={{ '--index': 2 }}>a</span>
+                              <span className="label-char" style={{ '--index': 3 }}>i</span>
+                              <span className="label-char" style={{ '--index': 4 }}>l</span>
+                              </label>
+                          </div>
+                        </Col>
+                    </Row>
+                    <Row className="mb-4 ">
+                      <Col lg="12" className="d-flex justify-content-center">
+                      <div className="wave-group">
+                              <input required="" type="text" className="input passwordInput" />
+                              <span className="bar passwordBar"></span>
+                              <label className="label">
+                              <span className="label-char" style={{ '--index': 0 }}>P</span>
+                              <span className="label-char" style={{ '--index': 1 }}>a</span>
+                              <span className="label-char" style={{ '--index': 2 }}>s</span>
+                              <span className="label-char" style={{ '--index': 3 }}>s</span>
+                              <span className="label-char" style={{ '--index': 4 }}>w</span>
+                              <span className="label-char" style={{ '--index': 5 }}>o</span>
+                              <span className="label-char" style={{ '--index': 6 }}>r</span>
+                              <span className="label-char" style={{ '--index': 7 }}>d</span>
+                              </label>
+                          </div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="12" className="d-flex justify-content-center">
+                      <div className="wave-group">
+                              <input required="" type="text" className="input passwordInput" />
+                              <span className="bar passwordBar"></span>
+                              <label className="label">
+                              <span className="label-char" style={{ '--index': 0 }}>C</span>
+                              <span className="label-char" style={{ '--index': 1 }}>o</span>
+                              <span className="label-char" style={{ '--index': 2 }}>n</span>
+                              <span className="label-char" style={{ '--index': 3 }}>f</span>
+                              <span className="label-char" style={{ '--index': 4 }}>i</span>
+                              <span className="label-char" style={{ '--index': 4 }}>r</span>
+                              <span className="label-char" style={{ '--index': 5 , marginRight : '3px' }}>m</span>
+                              <span className="label-char" style={{ '--index': 6 }}>P</span>
+                              <span className="label-char" style={{ '--index': 7 }}>a</span>
+                              <span className="label-char" style={{ '--index': 8 }}>s</span>
+                              <span className="label-char" style={{ '--index': 9 }}>s</span>
+                              <span className="label-char" style={{ '--index': 10 }}>w</span>
+                              <span className="label-char" style={{ '--index': 11 }}>o</span>
+                              <span className="label-char" style={{ '--index': 12 }}>r</span>
+                              <span className="label-char" style={{ '--index': 13 }}>d</span>
+                              </label>
+                          </div>
+                      </Col>
+                    </Row>
+                    </div>
+                </Col>
+                <Col xs lg="2"></Col>
+            </Row>
+        </Container>
+        </div>
+        </>
+    )
+}

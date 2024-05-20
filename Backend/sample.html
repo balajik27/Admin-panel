@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="user" placeholder="Enter name" name="" >
+    <input type="password" id="password" placeholder="Enter password" name="" >
+    <input onclick="saveData()" value="submit" type="button">
+    
+</body>
+</html>
+
+<script>
+async function saveData() {
+            try {
+                let name = document.getElementById('user').value;
+                let password = document.getElementById('password').value
+                let formData = {
+                    userName: name ,
+                    password: password
+                };
+
+                let sendData = await fetch("http://localhost:3001/", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (sendData.ok) {
+                    let response = await sendData.json();
+                    console.log("Response:", response);
+                } else {
+                    console.error("Error:", sendData.statusText);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+</script>
